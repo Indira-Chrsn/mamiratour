@@ -1,0 +1,106 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@1,400..700&display=swap');
+@import "@/node_modules/bootstrap/scss/bootstrap";
+
+body {
+  font-family: "helvetica", sans-serif;
+  letter-spacing: 1px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000;
+}
+
+h1, h2 {
+  color: #2f4bbb;
+  font-weight: 700;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+
+.container,
+.container-md,
+.container-lg {
+  @media (min-width: 1400px) {
+    max-width: 88%;
+  }
+}
+
+.page-enter-active,
+.page-leave-active,
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to,
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
+//scrollbar custom
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #d3d5e0 transparent;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #d3d5e0;
+    border-radius: 14px;
+    border: 0;
+  }
+}
+
+.scrollbar-hidden,
+.scrollbar-zero {
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+}
+
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-zero::-webkit-scrollbar {
+  width: 0;
+}
+
+.scrollbar-thin--alt {
+  scrollbar-width: thin;
+  scrollbar-color: #a0a0a0 transparent;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #a0a0a0;
+    border-radius: 14px;
+    border: 0;
+  }
+}
