@@ -3,8 +3,7 @@
 
 <template>
   <div>
-    <HomeBanner />
-    <HomeInfo />
+    gallery
   </div>
 </template>
 

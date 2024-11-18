@@ -1,0 +1,100 @@
+@use "sass:math";
+@use "sass:map";
+
+// make ratio classes
+@mixin imageRatio(
+  $imageWidth,
+  $imageHeight,
+  $maxWidth: false,
+  $objectFit: cover,
+  $className: "image"
+) {
+  &__#{$className}-container {
+    position: relative;
+    width: 100%;
+    @if ($maxWidth) {
+      display: inline-block;
+      @if ($maxWidth == true) {
+        max-width: #{$imageWidth}px;
+      } @else {
+        max-width: #{$maxWidth}px;
+      }
+    } @else {
+      display: block;
+    }
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: $objectFit;
+    }
+    &:before {
+      content: "";
+      display: block;
+      padding-top: math.div($imageHeight, $imageWidth) * 100%;
+    }
+
+    .ratio-item {
+      object-fit: $objectFit;
+    }
+  }
+}
+
+// text elypsis mixin
+@mixin elypsis($fontName, $fontSize, $lines-to-show: 1, $line-height: 1.4) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @each $breakpoint, $value in map.get($fontSizes, $fontName, $fontSize) {
+    @if ($breakpoint == "default") {
+      $font-size: map.get($fontSizes, $fontName, $fontSize, default, font-size);
+      @if (map.get($fontSizes, $fontName, $fontSize, default, line-height)) {
+        $line-height: map.get(
+          $fontSizes,
+          $fontName,
+          $fontSize,
+          default,
+          line-height
+        );
+      }
+
+      height: #{$font-size *
+        $line-height *
+        $lines-to-show}px; // Fallback for non-webkit
+      font-size: #{$font-size}px;
+      line-height: $line-height;
+      -webkit-line-clamp: $lines-to-show;
+    } @else {
+      @media screen and (max-width: #{$breakpoint}px ) {
+        $font-size: map.get(
+          $fontSizes,
+          $fontName,
+          $fontSize,
+          $breakpoint,
+          font-size
+        );
+        @if (
+          map.get($fontSizes, $fontName, $fontSize, $breakpoint, line-height)
+        ) {
+          $line-height: map.get(
+            $fontSizes,
+            $fontName,
+            $fontSize,
+            $breakpoint,
+            line-height
+          );
+        }
+
+        height: #{$font-size * $line-height * $lines-to-show}px; // Fallback for non-webkit
+        font-size: #{$font-size}px;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+      }
+    }
+  }
+}
