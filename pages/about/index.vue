@@ -1,9 +1,11 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
   <div>
-    about
+    <AboutBanner />
+    <AboutInfo />
   </div>
 </template>
 

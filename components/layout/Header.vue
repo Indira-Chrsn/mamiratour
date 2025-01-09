@@ -26,8 +26,8 @@ onMounted(() => {
 
     lastScroll = window.scrollY
 
-    console.log('window', windowHeight)
-    console.log('last scroll', lastScroll)
+    // console.log('window', windowHeight)
+    // console.log('last scroll', lastScroll)
   })
 })
 </script>
