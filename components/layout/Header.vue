@@ -53,10 +53,10 @@ onMounted(() => {
           About
         </NuxtLink>
         <NuxtLink
-          to="/gallery"
+          to="/package"
           class="navbar-item"
         >
-          Gallery
+          Package
         </NuxtLink>
         <NuxtLink
           to="/contact"
@@ -87,6 +87,7 @@ onMounted(() => {
 
     .navbar-item {
       color: #000;
+
     }
   }
 
@@ -113,6 +114,10 @@ onMounted(() => {
     margin: 0 10px;
     font-size: 18px;
     transition: all 0.3s ease;
+
+    &.router-link-active {
+      color: #1c48ad;
+    }
   }
 }
 </style>

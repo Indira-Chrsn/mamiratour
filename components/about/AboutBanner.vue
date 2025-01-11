@@ -3,17 +3,17 @@
 </script>
 
 <template>
-  <section class="banner">
+  <section class="about-banner">
     <div class="container">
-      <div class="banner__info-container">
-        <div class="banner__info-content">
-          <h1 class="banner__info-label">
+      <div class="about-banner__info-container">
+        <div class="about-banner__info-content">
+          <h1 class="about-banner__info-label">
             About Us
           </h1>
-          <h2 class="banner__info-title">
+          <h2 class="about-banner__info-title">
             Our Mission is To Provide Concise and Effective Legal
           </h2>
-          <p class="banner__info-text">
+          <p class="about-banner__info-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut
             diam sed dolor ultricies faucibus non at felis. Phasellus vel
             consequat risus, dapibus condimentum enim. Nulla risus massa,
@@ -21,11 +21,11 @@
           </p>
         </div>
       </div>
-      <div class="banner__image-container">
+      <div class="about-banner__image-container">
         <img
           src="https://plus.unsplash.com/premium_photo-1682630628981-e8e02970be27?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Our Team"
-          class="banner__image"
+          class="about-banner__image"
         >
       </div>
     </div>
@@ -33,11 +33,13 @@
 </template>
 
 <style lang="scss" scoped>
-.banner {
-  @include imageRatio(1100, 700, true);
+.about-banner {
+  @include imageRatio(800, 600, true);
+
+  position: relative;
   display: flex;
   margin-top: 100px;
-  height: 100vh;
+  // height: 100vh;
   background-color: #051d34;
   padding: 100px 0;
   text-align: right;
@@ -54,13 +56,13 @@
     color: #3e4c5c;
     font-size: 60px;
     position: absolute;
-    bottom: 30px;
+    bottom: 100px;
     left: 8%;
   }
 
   &__info-container {
     position: absolute;
-    top: 200px;
+    top: 100px;
     left: 8%;
     z-index: 1;
     text-align: left;

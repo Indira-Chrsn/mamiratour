@@ -6,6 +6,7 @@
   <div>
     <AboutBanner />
     <AboutInfo />
+    <AboutStory />
   </div>
 </template>
 
